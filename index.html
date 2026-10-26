@@ -319,6 +319,47 @@ nav.menu a.cta{color:#13132a;background:#fff;font-weight:600;margin-left:8px}
   .sticky-cta span{font-weight:700;font-size:15px}
   .sticky-cta small{font-size:11.5px;opacity:.8}
 }
+/* ===== contact form ===== */
+.ct-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,5vw,72px);align-items:end}
+@media (max-width:960px){.ct-grid{grid-template-columns:1fr}}
+.qform{display:flex;flex-direction:column;gap:14px;padding:clamp(22px,2.6vw,32px);border-radius:20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(6px)}
+.qf-t{margin:0;font-size:20px;font-weight:700;color:#fff}
+.qf-s{margin:-6px 0 4px;font-size:14px;color:var(--night-muted)}
+.qform label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:#d9dbf3}
+.qform input:not([type=checkbox]),.qform textarea{font:inherit;font-size:15px;font-weight:400;color:#fff;background:rgba(7,11,36,.55);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:12px 14px;resize:vertical}
+.qform input::placeholder,.qform textarea::placeholder{color:#8e92b8}
+.qform input:focus,.qform textarea:focus{outline:2px solid #b19bff;outline-offset:1px;border-color:transparent}
+.qform .agree{flex-direction:row;align-items:flex-start;gap:8px;font-weight:400;color:var(--night-muted)}
+.qform .agree input{margin-top:3px;accent-color:#8a4dff}
+.qform .agree a{color:#c3a4ff}
+.qf-btn{background:#8a4dff;color:#fff;justify-content:center;border:0;cursor:pointer;font-size:16px;padding:15px}
+.qf-btn[disabled]{opacity:.6;cursor:wait}
+.qf-msg{margin:0;font-size:14px;min-height:1.2em;color:#95e6d4}
+.qf-msg.err{color:#ffb4b4}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+/* ===== chatbot ===== */
+.cb-fab{position:fixed;right:20px;bottom:20px;z-index:80;display:flex;align-items:center;gap:8px;padding:14px 20px;border:0;border-radius:999px;background:#13132a;color:#fff;font:inherit;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 10px 30px rgba(19,19,42,.35)}
+.cb-fab:hover{background:#6331e0}
+.cb-dot{width:9px;height:9px;border-radius:50%;background:#54d6aa;box-shadow:0 0 0 4px rgba(84,214,170,.25)}
+.cb{position:fixed;right:20px;bottom:86px;z-index:81;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100vh - 120px));display:flex;flex-direction:column;background:#fff;color:#13132a;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(7,11,36,.35)}
+.cb[hidden]{display:none}
+.cb-h{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;background:#13132a;color:#fff}
+.cb-h b{display:block;font-size:15px}.cb-h small{font-size:12px;color:#b9bcdc}
+.cb-h button{background:none;border:0;color:#fff;font-size:18px;cursor:pointer;padding:4px 8px}
+.cb-log{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#f4f4f8}
+.cb-m{max-width:85%;padding:10px 14px;border-radius:16px;font-size:14.5px;line-height:1.55;white-space:pre-line;word-break:keep-all;overflow-wrap:anywhere}
+.cb-m.bot{align-self:flex-start;background:#fff;border:1px solid #e6e6ee;border-top-left-radius:4px}
+.cb-m.me{align-self:flex-end;background:#6331e0;color:#fff;border-top-right-radius:4px}
+.cb-m a{color:inherit;font-weight:700}
+.cb-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px;background:#f4f4f8}
+.cb-chips:not(:empty){padding:4px 12px 12px}
+.cb-chips button{border:1px solid #c9b8ff;background:#fff;color:#4b22c4;border-radius:999px;padding:7px 12px;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer}
+.cb-chips button.pri{background:#6331e0;color:#fff;border-color:#6331e0}
+.cb-chips button.kk{background:#FEE500;color:#191919;border-color:#FEE500}
+.cb-in{display:flex;gap:8px;padding:10px;border-top:1px solid #e6e6ee;background:#fff}
+.cb-in input{flex:1;font:inherit;font-size:15px;border:1px solid #d9d9e6;border-radius:10px;padding:10px 12px;min-width:0}
+.cb-in button{border:0;background:#13132a;color:#fff;border-radius:10px;padding:0 14px;font:inherit;font-weight:600;cursor:pointer}
+@media (max-width:760px){.cb-fab{bottom:calc(76px + env(safe-area-inset-bottom,0px));right:14px;padding:12px 16px;font-size:14px}.cb{right:12px;left:12px;width:auto;bottom:calc(136px + env(safe-area-inset-bottom,0px));height:min(520px,calc(100vh - 200px))}}
 </style>
 
 </head>
@@ -588,6 +629,8 @@ nav.menu a.cta{color:#13132a;background:#fff;font-weight:600;margin-left:8px}
 
 <footer class="contact" id="contact">
   <div class="wrap">
+    <div class="ct-grid">
+    <div class="ct-left">
     <p class="label fade" style="color:#c3a4ff">Contact</p>
     <h2 class="fade" style="margin-top:14px">광고가 필요한 순간,<br>요니홀딩스</h2>
     <p class="lead fade">메일 제목에 [병의원] 또는 [F&amp;B·브랜드]를 붙이고 업종·지역·원하시는 채널을 적어 보내주세요. 담당 사업부에서 맞춤 제안서로 회신드립니다.</p>
@@ -601,6 +644,19 @@ nav.menu a.cta{color:#13132a;background:#fff;font-weight:600;margin-left:8px}
       <button class="btn light" id="copyBtn" type="button">이메일 복사</button>
       <span class="copied" id="copied" aria-live="polite"></span>
     </div>
+    </div>
+    <form class="qform fade" id="qform" novalidate>
+      <p class="qf-t">온라인 문의 접수</p>
+      <p class="qf-s">남겨주시면 담당자가 24시간 이내 연락드립니다.</p>
+      <label>제목<input name="qtitle" required maxlength="80" placeholder="예) [병의원] 피부과 체험단 문의"></label>
+      <label>회신받을 연락처<input name="contact" required maxlength="80" placeholder="휴대폰 번호 또는 이메일"></label>
+      <label>문의 내용<textarea name="body" required rows="5" maxlength="3000" placeholder="업종, 지역, 원하시는 채널이나 궁금하신 점을 자유롭게 적어주세요."></textarea></label>
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+      <label class="agree"><input type="checkbox" name="agree" required> <span>문의 응대를 위한 <a href="privacy.html" target="_blank">개인정보 수집·이용</a>에 동의합니다.</span></label>
+      <button class="btn qf-btn" type="submit">문의 접수하기</button>
+      <p class="qf-msg" id="qfMsg" aria-live="polite"></p>
+    </form>
+    </div>
     <div class="foot">
       <div><b>상호명</b>주식회사 요니홀딩스</div>
       <div><b>대표</b>정지연</div>
@@ -610,6 +666,13 @@ nav.menu a.cta{color:#13132a;background:#fff;font-weight:600;margin-left:8px}
     <div class="foot-brand"><p class="copy" style="margin-top:0"><a class="plink" href="privacy.html">개인정보 처리방침</a><br>© 2026 YONY HOLDINGS. All rights reserved.</p><img src="img/yh-white.png" alt="요니홀딩스 로고"></div>
   </div>
 </footer>
+<button class="cb-fab" id="cbFab" type="button" aria-label="AI 상담원과 상담하기" aria-expanded="false"><span class="cb-dot"></span>AI 상담원</button>
+<section class="cb" id="cb" hidden aria-label="요니홀딩스 AI 상담원">
+  <header class="cb-h"><div><b>요니홀딩스 AI 상담원</b><small>남겨주시면 24시간 이내 연락드려요</small></div><button type="button" id="cbClose" aria-label="상담창 닫기">✕</button></header>
+  <div class="cb-log" id="cbLog" aria-live="polite"></div>
+  <div class="cb-chips" id="cbChips"></div>
+  <form class="cb-in" id="cbIn"><input id="cbText" autocomplete="off" placeholder="메시지를 입력하세요" maxlength="1000"><button type="submit">보내기</button></form>
+</section>
 <div class="sticky-cta"><a class="sc-k" href="https://pf.kakao.com/_mxjFts" target="_blank" rel="noopener"><span>카카오톡 상담</span><small>평일 10~18시</small></a><a class="sc-m" href="#contact"><span>광고 문의</span><small>24시간 이내 회신</small></a></div>
 
 <script>
@@ -666,6 +729,100 @@ nav.menu a.cta{color:#13132a;background:#fff;font-weight:600;margin-left:8px}
     function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('email'));var s=getSelection();s.removeAllRanges();s.addRange(r);msg.textContent='주소를 선택했어요. Ctrl+C로 복사하세요.';}
     try{navigator.clipboard.writeText(t).then(function(){msg.textContent='복사되었습니다.';},sel);}catch(e){sel();}
   });
+
+  /* ===== 문의 메일 전송 (FormSubmit) ===== */
+  var MAILTO='https://formsubmit.co/ajax/jee_en_@naver.com';
+  function sendMail(data){
+    data._template='table'; data._captcha='false';
+    return fetch(MAILTO,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+      .then(function(r){return r.json().then(function(j){ if(!r.ok||String(j.success)==='false') throw new Error(j.message||'fail'); return j; });});
+  }
+  function okContact(v){return /^[0-9\-\s+()]{9,}$/.test(v)||/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)}
+  function now(){return new Date().toLocaleString('ko-KR',{timeZone:'Asia/Seoul'})}
+
+  var f=document.getElementById('qform'), fm=document.getElementById('qfMsg');
+  f.addEventListener('submit',function(e){
+    e.preventDefault(); fm.className='qf-msg';
+    var E=f.elements, t=E.qtitle.value.trim(), c=E.contact.value.trim(), b=E.body.value.trim();
+    if(E._honey.value) return;
+    if(!t||!c||!b){fm.className='qf-msg err';fm.textContent='제목, 연락처, 문의 내용을 모두 적어주세요.';return}
+    if(!okContact(c)){fm.className='qf-msg err';fm.textContent='연락처는 휴대폰 번호나 이메일 형식으로 적어주세요.';return}
+    if(!E.agree.checked){fm.className='qf-msg err';fm.textContent='개인정보 수집·이용에 동의해 주세요.';return}
+    var btn=f.querySelector('button'); btn.disabled=true; btn.textContent='접수 중…';
+    sendMail({_subject:'[홈페이지 문의] '+t,'접수 경로':'홈페이지 문의 폼','제목':t,'연락처':c,'문의 내용':b,'접수 시각':now()})
+      .then(function(){f.reset();fm.textContent='접수되었습니다. 24시간 이내 연락드릴게요. 감사합니다!';if(window.gtag)gtag('event','generate_lead',{method:'form'});})
+      .catch(function(){fm.className='qf-msg err';fm.innerHTML='전송에 실패했어요. 잠시 후 다시 시도하시거나 <a href="https://pf.kakao.com/_mxjFts" target="_blank" rel="noopener" style="color:#FEE500">카카오톡</a>으로 문의해 주세요.';})
+      .then(function(){btn.disabled=false;btn.textContent='문의 접수하기';});
+  });
+
+  /* ===== AI 상담원 (단계형 상담 챗봇) ===== */
+  var fab=document.getElementById('cbFab'), box=document.getElementById('cb'), log=document.getElementById('cbLog'),
+      chips=document.getElementById('cbChips'), inp=document.getElementById('cbIn'), txt=document.getElementById('cbText');
+  var KAKAO='https://pf.kakao.com/_mxjFts';
+  var st={step:0,ind:'',name:'',contact:'',q:'',lines:[]}, started=false, sent=false;
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function say(who,text,html){
+    var d=document.createElement('div'); d.className='cb-m '+who;
+    if(html) d.innerHTML=html; else d.textContent=text;
+    log.appendChild(d); log.scrollTop=log.scrollHeight;
+    st.lines.push((who==='bot'?'상담원: ':'고객: ')+(text||d.textContent));
+  }
+  function bot(text,html,delay){return new Promise(function(r){setTimeout(function(){say('bot',text,html);r()},delay==null?450:delay)})}
+  function setChips(list){chips.innerHTML='';(list||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c.t;if(c.cls)b.className=c.cls;b.onclick=c.fn||function(){answer(c.t)};chips.appendChild(b)});log.scrollTop=log.scrollHeight}
+  var FAQ={
+    '비용':'비용은 업종·지역·채널·기간에 따라 달라요. 상담 내용을 남겨주시면 꼭 필요한 항목만 담은 맞춤 견적을 보내드려요.',
+    '기간':'체험단은 보통 모집부터 리뷰 발행까지 2~4주, 블로그 운영·상위노출은 월 단위로 진행해요. 오픈 일정이 있다면 함께 알려주세요.',
+    '의료':'병의원 광고는 의료법 기준을 고려해 과장 표현 없이 원고와 가이드를 만들고, 현직 의사 자문진과 함께 검토해요.'
+  };
+  function faqReply(v){
+    if(/비용|가격|견적|얼마/.test(v)) return FAQ['비용'];
+    if(/기간|얼마나 걸|일정|언제/.test(v)) return FAQ['기간'];
+    if(/의료법|의료광고|심의/.test(v)) return FAQ['의료'];
+    return '';
+  }
+  function ask(){
+    if(st.step===1){bot('먼저 업종을 알려주세요.').then(function(){setChips([{t:'병의원'},{t:'F&B·외식'},{t:'뷰티·브랜드'},{t:'공공기관·단체'},{t:'기타'}])})}
+    else if(st.step===2){setChips([]);bot('담당자 성함과 병원·상호명을 알려주세요.\n예) 김요니 / 요니피부과')}
+    else if(st.step===3){bot('연락 받으실 휴대폰 번호나 이메일을 남겨주세요.')}
+    else if(st.step===4){bot('궁금하신 점이나 원하시는 마케팅을 자유롭게 적어주세요.')}
+    else if(st.step===5){
+      bot('','<b>접수 내용을 확인해 주세요</b><br>업종: '+esc(st.ind)+'<br>담당자: '+esc(st.name)+'<br>연락처: '+esc(st.contact)+'<br>문의: '+esc(st.q)).then(function(){
+        return bot('','개인정보(성함·연락처)는 문의 응대에만 사용돼요. <a href="privacy.html" target="_blank">개인정보 처리방침</a>');
+      }).then(function(){setChips([{t:'동의하고 접수하기',cls:'pri',fn:submit},{t:'처음부터 다시',fn:restart}])});
+    }
+  }
+  function answer(v){
+    v=v.trim(); if(!v) return;
+    say('me',v); setChips([]);
+    if(sent){var fr=faqReply(v);bot(fr||'추가 내용도 담당자에게 전달할게요. 급하시면 카카오톡 상담도 이용해 주세요.').then(function(){if(!fr){sendMail({_subject:'[AI상담·추가] '+st.name,'추가 메시지':v,'연락처':st.contact,'접수 시각':now()}).catch(function(){})}setChips([{t:'카카오톡 상담',cls:'kk',fn:function(){window.open(KAKAO,'_blank','noopener')}}])});return}
+    if(st.step===1){st.ind=v;st.step=2;ask();return}
+    if(st.step===2){st.name=v;st.step=3;ask();return}
+    if(st.step===3){if(!okContact(v)){bot('휴대폰 번호(예: 010-1234-5678)나 이메일 형식으로 다시 적어주세요.');return}st.contact=v;st.step=4;ask();return}
+    if(st.step===4){st.q=v;var fr=faqReply(v);st.step=5;(fr?bot(fr+'\n자세한 내용은 담당자가 연락드려 안내할게요.'):Promise.resolve()).then(ask);return}
+    if(st.step===5){bot('아래 버튼으로 접수를 마무리해 주세요.').then(function(){setChips([{t:'동의하고 접수하기',cls:'pri',fn:submit},{t:'처음부터 다시',fn:restart}])});return}
+  }
+  function submit(){
+    setChips([]); say('me','동의하고 접수하기');
+    bot('접수 중이에요…',null,200).then(function(){
+      return sendMail({_subject:'[AI상담] '+st.ind+' / '+st.name,'접수 경로':'AI 상담원 챗봇','업종':st.ind,'담당자':st.name,'연락처':st.contact,'문의 내용':st.q,'접수 시각':now(),'상담 대화 전체':st.lines.join('\n')});
+    }).then(function(){
+      sent=true; if(window.gtag)gtag('event','generate_lead',{method:'chatbot'});
+      return bot('접수가 완료되었습니다! 담당자가 확인 후 24시간 이내(평일 10~18시 기준) 연락드릴게요. 감사합니다 :)');
+    }).catch(function(){
+      return bot('','앗, 전송에 실패했어요. 잠시 후 다시 시도하시거나 <a href="'+KAKAO+'" target="_blank" rel="noopener">카카오톡 상담</a>으로 남겨주세요.').then(function(){setChips([{t:'다시 접수하기',cls:'pri',fn:submit}])});
+    }).then(function(){ if(sent) setChips([{t:'카카오톡 상담',cls:'kk',fn:function(){window.open(KAKAO,'_blank','noopener')}}]) });
+  }
+  function restart(){setChips([]);st={step:1,ind:'',name:'',contact:'',q:'',lines:st.lines};sent=false;ask()}
+  function open(){
+    box.hidden=false; fab.setAttribute('aria-expanded','true');
+    if(!started){started=true;
+      bot('안녕하세요, 주식회사 요니홀딩스입니다.\n업종 / 담당자 / 궁금하신 점을 남겨주시면 24시간 이내 연락드리겠습니다.',null,150).then(function(){st.step=1;ask()});
+    }
+    setTimeout(function(){txt.focus()},200);
+  }
+  fab.addEventListener('click',function(){box.hidden?open():(box.hidden=true,fab.setAttribute('aria-expanded','false'))});
+  document.getElementById('cbClose').addEventListener('click',function(){box.hidden=true;fab.setAttribute('aria-expanded','false')});
+  inp.addEventListener('submit',function(e){e.preventDefault();var v=txt.value;txt.value='';if(st.step>0||sent)answer(v)});
 })();
 </script>
 
