@@ -175,6 +175,10 @@ nav.menu a.cta{color:#13132a;background:#fff;font-weight:600;margin-left:8px}
 .item .thumb{aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:var(--bg2)}
 .item img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .8s var(--ease)}
 .item:hover img{transform:scale(1.05)}
+.item .thumb.ttl{display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:20px;background:linear-gradient(135deg,#2a54b8 0%,#3f8f6b 100%);color:#fff;transition:transform .8s var(--ease)}
+.item:hover .thumb.ttl{transform:scale(1.02)}
+.item .thumb.ttl .ttl-k{font-size:12px;letter-spacing:.08em;opacity:.85}
+.item .thumb.ttl b{font-size:clamp(18px,1.8vw,24px);line-height:1.25;font-weight:700;letter-spacing:-.01em}
 .item .cat{display:inline-block;font-size:12px;font-weight:600;margin-top:14px;padding:2px 9px;border-radius:999px}
 .item[data-cat="med"] .cat{background:var(--med-soft);color:var(--med-ink)}
 .item[data-cat="fnb"] .cat{background:var(--fnb-soft);color:var(--fnb-ink)}
@@ -403,6 +407,7 @@ nav.menu a.cta{color:#13132a;background:#fff;font-weight:600;margin-left:8px}
     <div class="grid stagger" id="grid">
       <article class="item" data-cat="med"><div class="thumb"><img loading="lazy" src="img/med-seoultone.jpg" alt=""></div><span class="cat">병의원</span><h4>서울톤피부과의원</h4><p>홈페이지형 브랜드 블로그</p></article>
       <article class="item" data-cat="med"><div class="thumb"><img loading="lazy" src="img/med-cellin.jpg" alt=""></div><span class="cat">병의원</span><h4>셀린의원</h4><p>병원 홈페이지 · 일본 브랜딩</p></article>
+      <article class="item" data-cat="med"><div class="thumb"><img loading="lazy" src="img/med-glowport.jpg" alt="글로우포트의원 내부 촬영 사진" style="object-position:center"></div><span class="cat">병의원</span><h4>글로우포트의원</h4><p>월간 디자인 대행 · 촬영 · 체험단</p></article>
       <article class="item" data-cat="fnb"><div class="thumb"><img loading="lazy" src="img/fnb-shrimp.jpg" alt=""></div><span class="cat">F&amp;B</span><h4>쉬림프쉐프 마산삼계점</h4><p>방문형 블로그 체험단</p></article>
       <article class="item" data-cat="pub"><div class="thumb"><img loading="lazy" src="img/hotel.jpg" alt=""></div><span class="cat">기업</span><h4>파나크 바이 소노</h4><p>호텔 BI·CI · 분양 홍보 전체</p></article>
       <article class="item" data-cat="med"><div class="thumb"><img loading="lazy" src="img/med-pharma.jpg" alt=""></div><span class="cat">제약</span><h4>파마리서치</h4><p>리쥬비엘·리쥬더마 거래병원 마케팅</p></article>
@@ -412,6 +417,7 @@ nav.menu a.cta{color:#13132a;background:#fff;font-weight:600;margin-left:8px}
       <article class="item" data-cat="med"><div class="thumb"><img loading="lazy" src="img/med-reels1.jpg" alt=""></div><span class="cat">병의원</span><h4>피부과 릴스 체험단</h4><p>시술 전후 인스타그램 릴스</p></article>
       <article class="item" data-cat="fnb"><div class="thumb"><img loading="lazy" src="img/fnb-shabu.jpg" alt=""></div><span class="cat">F&amp;B</span><h4>샤브르정원</h4><p>META 광고 · 가맹 문의 DB 확보</p></article>
       <article class="item" data-cat="pub"><div class="thumb"><img loading="lazy" src="img/pub-welfare.jpg" alt=""></div><span class="cat">공공</span><h4>서울시복지재단</h4><p>온라인 종합광고 대행</p></article>
+      <article class="item" data-cat="pub"><div class="thumb ttl"><span class="ttl-k">대통령직속</span><b>농어업·농어촌<br>특별위원회</b></div><span class="cat">공공</span><h4>농어업·농어촌특별위원회</h4><p>온라인 종합광고 대행</p></article>
       <article class="item" data-cat="fnb"><div class="thumb"><img loading="lazy" src="img/fnb-rest2.jpg" alt=""></div><span class="cat">F&amp;B</span><h4>레스토랑 체험단</h4><p>방문형 인스타그램 체험단</p></article>
       <article class="item" data-cat="med"><div class="thumb"><img loading="lazy" src="img/med-japan.jpg" alt=""></div><span class="cat">병의원</span><h4>일본 현지 체험단</h4><p>리쥬란 시술 인스타그램 후기</p></article>
       <article class="item" data-cat="fnb"><div class="thumb"><img loading="lazy" src="img/fnb-addlab.jpg" alt=""></div><span class="cat">제품</span><h4>addlab</h4><p>클렌징오일 배송형 체험단</p></article>
