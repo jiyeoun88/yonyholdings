@@ -361,6 +361,9 @@ nav.menu a.cta{color:#13132a;background:#fff;font-weight:600;margin-left:8px}
 .cb-in input{flex:1;font:inherit;font-size:15px;border:1px solid #d9d9e6;border-radius:10px;padding:10px 12px;min-width:0}
 .cb-in button{border:0;background:#13132a;color:#fff;border-radius:10px;padding:0 14px;font:inherit;font-weight:600;cursor:pointer}
 @media (max-width:760px){.cb-fab{bottom:calc(76px + env(safe-area-inset-bottom,0px));right:14px;padding:12px 16px;font-size:14px}.cb{right:12px;left:12px;width:auto;bottom:calc(136px + env(safe-area-inset-bottom,0px));height:min(520px,calc(100vh - 200px))}}
+.hours{align-items:center}.hours .hours-k{align-self:stretch;display:inline-flex;align-items:center;padding-inline:26px;border-radius:12px}
+.mail{flex-wrap:nowrap}.mail code{font-size:clamp(17px,2vw,24px)}
+@media (max-width:520px){.mail{flex-wrap:wrap}}
 </style>
 
 </head>
@@ -638,9 +641,9 @@ nav.menu a.cta{color:#13132a;background:#fff;font-weight:600;margin-left:8px}
     <div class="hours fade" aria-label="문의 답변 시간">
       <div><b>문의 답변 시간</b><span>평일 10:00 ~ 18:00</span></div>
       <div><b>회신</b><span>접수 후 24시간 이내</span></div>
+      <a class="btn kakao hours-k" href="https://pf.kakao.com/_mxjFts" target="_blank" rel="noopener">카카오톡 상담하기</a>
     </div>
     <div class="mail fade">
-      <a class="btn kakao" href="https://pf.kakao.com/_mxjFts" target="_blank" rel="noopener">카카오톡 상담하기</a>
       <code id="email">jyjung@yonyholdings.co.kr</code>
       <button class="btn light" id="copyBtn" type="button">이메일 복사</button>
       <span class="copied" id="copied" aria-live="polite"></span>
