@@ -765,7 +765,7 @@ nav.menu a.cta{color:#13132a;background:#fff;font-weight:600;margin-left:8px}
     var d=document.createElement('div'); d.className='cb-m '+who;
     if(html) d.innerHTML=html; else d.textContent=text;
     log.appendChild(d); log.scrollTop=log.scrollHeight;
-    st.lines.push((who==='bot'?'상담원: ':'고객: ')+(text||d.textContent));
+    st.lines.push((who==='bot'?'상담원: ':'고객: ')+(text||d.innerText||d.textContent));
   }
   function bot(text,html,delay){return new Promise(function(r){setTimeout(function(){say('bot',text,html);r()},delay==null?450:delay)})}
   function setChips(list){chips.innerHTML='';(list||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c.t;if(c.cls)b.className=c.cls;b.onclick=c.fn||function(){answer(c.t)};chips.appendChild(b)});log.scrollTop=log.scrollHeight}
