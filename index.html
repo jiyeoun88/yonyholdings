@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="요니홀딩스 - 병의원 마케팅과 F&B·브랜드 마케팅을 직접 실행하는 체험단·리뷰 마케팅 광고실행사">
+<meta property="og:title" content="YONY HOLDINGS 요니홀딩스">
+<meta property="og:description" content="광고가 필요한 순간, 직접 실행하는 체험단·리뷰 마케팅 광고실행사">
+<meta property="og:image" content="img/hotel.jpg">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<title>YONY HOLDINGS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap">
+<script>
+/* turn on scroll animations only when the browser supports them and motion is allowed */
+try{if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('anim')}}catch(e){}
+</script>
+<style>
+:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+/* Layout: image-led brand site — aurora hero, photo marquee, two full-photo division doors,
+   split photo/text division chapters, filterable portfolio grid, compact solutions, night footer */
+:root{
+  --bg:#ffffff; --bg2:#f4f4f8; --fg:#13132a; --muted:#64647c; --line:#e6e6ee;
+  --accent:#7c47f5; --accent-ink:#6331e0;
+  --med:#0e9883; --med-soft:#e3f5f1; --med-ink:#0a6e60;
+  --fnb:#e0543c; --fnb-soft:#fdebe6; --fnb-ink:#b03823;
+  --pub:#3d6fe0; --pub-soft:#e7eefd; --pub-ink:#2a54b8;
+  --night:#070b24; --night-fg:#eef0ff; --night-muted:#a9add0;
+  --display:"Bricolage Grotesque","IBM Plex Sans KR",system-ui,sans-serif;
+  --body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b0c18; --bg2:#13142a; --fg:#ecebf7; --muted:#a2a1ba; --line:#25263d;
+  --accent:#a47dff; --accent-ink:#c2a5ff;
+  --med:#3fd0b6; --med-soft:#10302c; --med-ink:#74e4cf;
+  --fnb:#ff8a6e; --fnb-soft:#38191a; --fnb-ink:#ffab95;
+  --pub:#7ea3ff; --pub-soft:#18213f; --pub-ink:#a9c1ff; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0b0c18; --bg2:#13142a; --fg:#ecebf7; --muted:#a2a1ba; --line:#25263d;
+  --accent:#a47dff; --accent-ink:#c2a5ff;
+  --med:#3fd0b6; --med-soft:#10302c; --med-ink:#74e4cf;
+  --fnb:#ff8a6e; --fnb-soft:#38191a; --fnb-ink:#ffab95;
+  --pub:#7ea3ff; --pub-soft:#18213f; --pub-ink:#a9c1ff; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.7;word-break:keep-all;margin:0;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+h1,h2,h3,h4{text-wrap:balance;margin:0;line-height:1.25}
+p{margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+section[id],footer[id]{scroll-margin-top:68px}
+.label{font-family:var(--display);font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.sec-title{font-size:clamp(30px,4.6vw,54px);font-weight:700;letter-spacing:-.03em;line-height:1.18;margin-top:12px}
+.sec-lede{color:var(--muted);font-size:clamp(16px,1.5vw,18px);margin-top:16px;max-width:56ch}
+
+/* ===== animations: visible by default; hidden-then-revealed only when html.anim is set ===== */
+html.anim .fade{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+html.anim .fade.in{opacity:1;transform:none}
+html.anim .stagger>*{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(min(var(--i,0),10) * 80ms)}
+html.anim .stagger.in>*{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+/* ===== header ===== */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--night)}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(7,11,36,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--night-fg)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:800;letter-spacing:.03em;font-size:17px;white-space:nowrap}
+.logo .mark{height:30px;width:auto}
+.foot-brand{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-top:40px;flex-wrap:wrap}
+.foot-brand img{height:clamp(64px,8vw,96px);width:auto;opacity:.95}
+nav.menu{display:flex;gap:2px;align-items:center}
+nav.menu a{text-decoration:none;font-size:14.5px;color:var(--night-muted);padding:7px 12px;border-radius:8px;white-space:nowrap}
+nav.menu a:hover{color:#fff}
+nav.menu a.cta{color:#13132a;background:#fff;font-weight:600;margin-left:8px}
+@media (max-width:1000px){nav.menu a.x{display:none}}
+@media (max-width:620px){nav.menu a:not(.cta){display:none}}
+
+/* ===== hero ===== */
+.hero{position:relative;overflow:hidden;background:var(--night);color:var(--night-fg);isolation:isolate}
+.hero::before{content:"";position:absolute;inset:-20%;z-index:-2;
+  background:
+   radial-gradient(40% 55% at 78% 55%,rgba(84,214,170,.6),transparent 70%),
+   radial-gradient(35% 45% at 66% 30%,rgba(70,140,230,.55),transparent 70%),
+   radial-gradient(45% 40% at 18% 100%,rgba(230,80,160,.6),transparent 70%),
+   radial-gradient(35% 35% at 45% 95%,rgba(140,80,240,.6),transparent 70%),
+   radial-gradient(25% 25% at 6% 98%,rgba(255,170,90,.5),transparent 70%);
+  filter:blur(30px);animation:drift 18s ease-in-out infinite alternate}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(0deg,rgba(7,11,36,.5) 0 1px,transparent 1px 4px)}
+@keyframes drift{to{transform:translate3d(-4%,-3%,0) rotate(4deg) scale(1.06)}}
+.hero .wrap{padding-block:clamp(80px,13vw,170px) clamp(56px,8vw,96px)}
+.hero .kicker{font-size:15px;color:#cfd2ee;letter-spacing:.04em}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(46px,9vw,124px);letter-spacing:-.035em;line-height:.95;margin-top:18px}
+.grad{background:linear-gradient(95deg,#b19bff 0%,#ef93e3 42%,#9cc1dc 70%,#95e6d4 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font-size:clamp(20px,2.6vw,30px);font-weight:300;margin-top:20px;letter-spacing:-.01em}
+.hero .sub b{font-weight:600}
+.hero .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:40px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:var(--body);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn .d{width:8px;height:8px;border-radius:50%}
+.btn.light{background:#fff;color:#13132a}
+.btn.glass{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.28);color:#fff}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:clamp(64px,9vw,110px);padding-top:28px;border-top:1px solid rgba(255,255,255,.18)}
+.stat b{display:block;font-family:var(--display);font-weight:700;font-size:clamp(30px,4vw,52px);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat span{display:block;font-size:14px;color:var(--night-muted);margin-top:10px}
+@media (max-width:720px){.stats{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:32px}}
+
+/* ===== marquee ===== */
+.marquee{overflow:hidden;background:var(--night);padding-block:0 clamp(40px,6vw,64px)}
+.track{display:flex;gap:14px;width:max-content;animation:slide 60s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.track img{height:clamp(160px,20vw,250px);width:auto;aspect-ratio:4/5;object-fit:cover;border-radius:14px}
+.track img.w{aspect-ratio:16/10}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ===== intro / doors ===== */
+.intro{padding-block:clamp(88px,12vw,150px) clamp(48px,6vw,72px)}
+.intro .label{color:var(--accent-ink)}
+.doors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding-bottom:clamp(88px,12vw,150px)}
+.door{position:relative;display:block;aspect-ratio:4/5;max-height:640px;width:100%;border-radius:22px;overflow:hidden;text-decoration:none;color:#fff;isolation:isolate}
+.door img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s var(--ease)}
+.door:hover img{transform:scale(1.05)}
+.door::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(5,6,20,.82))}
+.door .in-txt{position:absolute;left:0;right:0;bottom:0;padding:clamp(22px,3vw,36px)}
+.door .tag{display:inline-block;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.14em;padding:5px 12px;border-radius:999px;color:#fff}
+.door.m .tag{background:#0e9883}.door.f .tag{background:#e0543c}
+.door h3{font-size:clamp(28px,3.6vw,44px);font-weight:700;letter-spacing:-.02em;margin-top:14px}
+.door p{color:#e4e5f3;margin-top:8px;max-width:38ch}
+.door .more{display:inline-flex;margin-top:18px;font-weight:600;font-size:15px;border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:2px}
+@media (max-width:760px){.doors{grid-template-columns:1fr}.door{aspect-ratio:4/4.4}}
+
+/* ===== division chapters ===== */
+.division{padding-block:clamp(88px,12vw,150px);background:var(--bg2)}
+.division.f{background:var(--bg)}
+.division.m .label{color:var(--med-ink)}.division.f .label{color:var(--fnb-ink)}
+.split{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:center}
+.division.f .split{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)}
+.division.f .split .photos{order:2}
+@media (max-width:900px){.split,.division.f .split{grid-template-columns:1fr}.division.f .split .photos{order:0}}
+.photos{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:1fr 1fr;gap:12px;aspect-ratio:1/1;max-height:640px}
+.photos img{width:100%;height:100%;object-fit:cover;border-radius:16px;min-height:0}
+.photos img:first-child{grid-row:span 2}
+.svc{margin-top:36px;border-top:1px solid var(--line)}
+.svc li{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.svc ul{list-style:none;margin:0;padding:0}
+.svc b{font-weight:600;font-size:16px}
+.svc span{color:var(--muted);font-size:15px}
+@media (max-width:520px){.svc li{grid-template-columns:1fr;gap:2px}}
+.who{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
+.who span{font-size:13px;padding:4px 11px;border-radius:999px}
+.division.m .who span{background:var(--med-soft);color:var(--med-ink)}
+.division.f .who span{background:var(--fnb-soft);color:var(--fnb-ink)}
+.big-num{display:flex;gap:16px;align-items:baseline;margin-top:30px;flex-wrap:wrap}
+.big-num b{font-family:var(--display);font-weight:800;font-size:clamp(48px,6vw,76px);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.division.m .big-num b{color:var(--med)}.division.f .big-num b{color:var(--fnb)}
+.big-num span{color:var(--muted);font-size:15px;max-width:30ch}
+
+/* ===== portfolio ===== */
+.portfolio{padding-block:clamp(88px,12vw,150px);border-top:1px solid var(--line)}
+.portfolio .label{color:var(--accent-ink)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:36px}
+.tabs button{font-family:var(--body);font-size:15px;padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--fg);cursor:pointer;transition:background .2s,color .2s}
+.tabs button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.tabs button .n{font-size:12px;opacity:.6;margin-left:4px;font-variant-numeric:tabular-nums}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px 18px;margin-top:32px}
+@media (max-width:1000px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:720px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 12px}}
+.item{min-width:0}
+.item .thumb{aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:var(--bg2)}
+.item img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .8s var(--ease)}
+.item:hover img{transform:scale(1.05)}
+.item .cat{display:inline-block;font-size:12px;font-weight:600;margin-top:14px;padding:2px 9px;border-radius:999px}
+.item[data-cat="med"] .cat{background:var(--med-soft);color:var(--med-ink)}
+.item[data-cat="fnb"] .cat{background:var(--fnb-soft);color:var(--fnb-ink)}
+.item[data-cat="pub"] .cat{background:var(--pub-soft);color:var(--pub-ink)}
+.item h4{font-size:17px;font-weight:600;margin-top:8px}
+.item p{font-size:14px;color:var(--muted);margin-top:2px}
+
+/* ===== solutions ===== */
+.solutions{padding-block:clamp(88px,12vw,150px);background:var(--bg2)}
+.solutions .label{color:var(--accent-ink)}
+.tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:44px}
+@media (max-width:900px){.tools{grid-template-columns:1fr}}
+.tool{background:var(--bg);border-radius:18px;padding:30px;border:1px solid var(--line)}
+.tool .k{font-size:13px;color:var(--accent-ink);font-weight:600}
+.tool h3{font-family:var(--display);font-size:26px;font-weight:700;margin-top:6px;letter-spacing:-.01em}
+.tool p{color:var(--muted);font-size:15px;margin-top:10px}
+.tool ul{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:6px;font-size:14.5px}
+.tool li::before{content:"—";color:var(--accent);margin-right:8px}
+.platform{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:clamp(28px,5vw,64px);align-items:center;margin-top:80px}
+.platform img{border-radius:18px;border:1px solid var(--line);width:100%}
+.road{display:grid;gap:18px;margin-top:22px}
+.road div{display:grid;grid-template-columns:72px minmax(0,1fr);gap:14px}
+.road b{font-family:var(--display);font-size:26px;font-weight:800;line-height:1.1}
+.road h4{font-size:17px}
+.road p{color:var(--muted);font-size:14.5px;margin-top:2px}
+@media (max-width:900px){.platform{grid-template-columns:1fr}}
+
+/* ===== team ===== */
+.team-sec{padding-block:clamp(88px,12vw,150px)}
+.team-sec .label{color:var(--accent-ink)}
+.team{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:44px;border-top:1px solid var(--fg)}
+.person{padding:24px 20px 24px 0;border-bottom:1px solid var(--line)}
+.person .role{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--muted)}
+.person h4{font-size:19px;margin-top:6px}
+.person .pos{font-size:14px;color:var(--accent-ink);margin-top:2px}
+.person ul{margin:10px 0 0;padding:0;list-style:none;font-size:13.5px;color:var(--muted)}
+@media (max-width:1000px){.team{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.team{grid-template-columns:1fr}}
+.design{padding-block:clamp(88px,12vw,150px);border-top:1px solid var(--line)}
+.design .label{color:var(--accent-ink)}
+.dz-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:44px;padding-block:28px;border-block:1px solid var(--line)}
+.dz-stats b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(48px,6vw,80px);line-height:1;letter-spacing:-.03em;color:var(--accent);font-variant-numeric:tabular-nums}
+.dz-stats span{display:block;color:var(--muted);font-size:15px;margin-top:12px;max-width:34ch}
+.dz-stats small{font-size:13px;color:var(--muted);opacity:.85}
+.dz-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:32px}
+.dz{padding:30px;border-radius:18px;background:var(--bg2);min-width:0}
+.dz .k{font-size:13px;font-weight:600}
+.dz.m .k{color:var(--med-ink)}.dz.p .k{color:var(--pub-ink)}
+.dz h3{font-size:24px;font-weight:700;margin-top:6px;letter-spacing:-.01em}
+.dz p:not(.k){color:var(--muted);font-size:15px;margin-top:10px}
+.tg{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.tg span{font-size:12.5px;padding:4px 10px;border-radius:999px;background:var(--bg);border:1px solid var(--line)}
+@media (max-width:760px){.dz-grid,.dz-stats{grid-template-columns:1fr}}
+.logo-track li.txt{font-weight:700;font-size:15px;color:#2a2a3e;text-align:center;line-height:1.3;letter-spacing:-.01em}
+.clients-band{padding-block:clamp(72px,10vw,120px);border-top:1px solid var(--line);overflow:hidden}
+.clients-band .label{color:var(--accent-ink)}
+.logo-rows{display:grid;gap:14px;margin-top:40px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.logo-row{overflow:hidden}
+.logo-track{display:flex;gap:14px;width:max-content;margin:0;padding:0;list-style:none;animation:logos 55s linear infinite}
+.logo-row.rev .logo-track{animation-direction:reverse;animation-duration:50s}
+.logo-rows:hover .logo-track{animation-play-state:paused}
+.logo-track li{flex:none;width:clamp(150px,16vw,210px);height:clamp(76px,8vw,96px);display:grid;place-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 22px}
+.logo-track img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;filter:grayscale(1);opacity:.78;transition:filter .3s,opacity .3s}
+.logo-track li:hover img{filter:none;opacity:1}
+@keyframes logos{to{transform:translateX(calc(-50% - 7px))}}
+
+/* ===== contact ===== */
+.contact{background:var(--night);color:var(--night-fg);position:relative;overflow:hidden;isolation:isolate}
+.contact::before{content:"";position:absolute;inset:-30%;z-index:-2;background:radial-gradient(40% 50% at 85% 30%,rgba(84,214,170,.42),transparent 70%),radial-gradient(40% 50% at 10% 110%,rgba(230,110,90,.45),transparent 70%),radial-gradient(30% 40% at 50% 100%,rgba(140,80,240,.4),transparent 70%);filter:blur(30px)}
+.contact::after{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(0deg,rgba(7,11,36,.5) 0 1px,transparent 1px 4px)}
+.contact .wrap{padding-block:clamp(96px,13vw,160px) 40px}
+.contact h2{font-family:var(--display);font-size:clamp(36px,6vw,76px);font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.contact .lead{color:#cfd2ee;margin-top:20px;max-width:56ch;font-size:17px}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:36px}
+.mail code{font-family:var(--display);font-weight:500;font-size:clamp(18px,2.4vw,26px);padding:14px 22px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);user-select:all;overflow-wrap:anywhere}
+.copied{font-size:13px;color:#8fe0cf;min-height:1em}
+.foot{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:96px;padding-top:28px;border-top:1px solid rgba(255,255,255,.14);font-size:14px;color:var(--night-muted)}
+.foot b{display:block;color:#fff;font-size:13px;margin-bottom:4px;font-weight:600}
+.copy{margin-top:40px;font-size:12.5px;color:#7d81a8}
+@media (max-width:860px){.foot{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.foot{grid-template-columns:1fr}}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top"><img class="mark" src="img/yh-white.png" alt="">YONY HOLDINGS</a>
+    <nav class="menu" aria-label="주요 메뉴">
+      <a href="#medical">병의원 마케팅</a>
+      <a href="#brand">F&amp;B·브랜드</a>
+      <a class="x" href="#portfolio">포트폴리오</a>
+      <a class="x" href="#design">디자인</a>
+      <a class="x" href="#solutions">솔루션</a>
+      <a class="x" href="#company">회사소개</a>
+      <a class="cta" href="#contact">문의하기</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <p class="kicker fade">광고가 필요한 순간</p>
+    <h1 class="fade"><span class="grad">YONY<br>HOLDINGS</span></h1>
+    <p class="sub fade">직접 실행하는 <b>체험단 · 리뷰 마케팅</b> 광고실행사</p>
+    <div class="actions stagger">
+      <a class="btn light" href="#medical" style="--i:0"><span class="d" style="background:#0e9883"></span>병의원 마케팅</a>
+      <a class="btn glass" href="#brand" style="--i:1"><span class="d" style="background:#ff8a6e"></span>F&amp;B·브랜드 마케팅</a>
+    </div>
+    <div class="stats stagger">
+      <div class="stat" style="--i:0"><b data-count="20000" data-suffix="+">20,000+</b><span>인플루언서·블로거 DB</span></div>
+      <div class="stat" style="--i:1"><b data-count="15" data-suffix="년+">15년+</b><span>파워블로거 운영 노하우</span></div>
+      <div class="stat" style="--i:2"><b data-count="1000" data-suffix="건">1,000건</b><span>매월 발행 전문 콘텐츠 (최대)</span></div>
+      <div class="stat" style="--i:3"><b data-count="80" data-suffix="%+">80%+</b><span>콘텐츠 상위노출 비율</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <img src="img/med-room.jpg" alt=""><img src="img/fnb-rest1.jpg" alt=""><img class="w" src="img/hotel.jpg" alt=""><img src="img/med-doctor.jpg" alt=""><img src="img/fnb-shrimp.jpg" alt=""><img src="img/fnb-oat.jpg" alt=""><img src="img/med-lobby.jpg" alt=""><img src="img/fnb-brown.jpg" alt=""><img src="img/med-surgery.jpg" alt=""><img src="img/fnb-rest3.jpg" alt=""><img src="img/fnb-addlab.jpg" alt="">
+    <img src="img/med-room.jpg" alt=""><img src="img/fnb-rest1.jpg" alt=""><img class="w" src="img/hotel.jpg" alt=""><img src="img/med-doctor.jpg" alt=""><img src="img/fnb-shrimp.jpg" alt=""><img src="img/fnb-oat.jpg" alt=""><img src="img/med-lobby.jpg" alt=""><img src="img/fnb-brown.jpg" alt=""><img src="img/med-surgery.jpg" alt=""><img src="img/fnb-rest3.jpg" alt=""><img src="img/fnb-addlab.jpg" alt="">
+  </div>
+</div>
+
+<!-- INTRO + DOORS -->
+<section class="wrap">
+  <div class="intro">
+    <p class="label fade">Two divisions</p>
+    <h2 class="sec-title fade">업종이 다르면,<br>마케팅도 달라야 합니다</h2>
+    <p class="sec-lede fade">요니홀딩스는 병의원과 F&amp;B·브랜드, 두 개의 전문 사업부가 각 업종에 맞는 방식으로 캠페인을 직접 기획하고 집행합니다.</p>
+  </div>
+  <div class="doors stagger">
+    <a class="door m" href="#medical" style="--i:0">
+      <img src="img/med-room.jpg" alt="치과 진료실 내부 촬영 사진">
+      <div class="in-txt">
+        <span class="tag">MEDICAL</span>
+        <h3>병의원 마케팅</h3>
+        <p>원장님의 전문성을 콘텐츠로. 의료광고 기준을 지키는 병원 전문 마케팅.</p>
+        <span class="more">자세히 보기 →</span>
+      </div>
+    </a>
+    <a class="door f" href="#brand" style="--i:1">
+      <img src="img/fnb-rest1.jpg" alt="레스토랑 체험단 인스타그램 사진">
+      <div class="in-txt">
+        <span class="tag">F&amp;B · BRAND</span>
+        <h3>F&amp;B·브랜드 마케팅</h3>
+        <p>빠른 인지도, 눈에 보이는 매출. 매장·제품·기업을 위한 마케팅.</p>
+        <span class="more">자세히 보기 →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- MEDICAL -->
+<section class="division m" id="medical">
+  <div class="wrap split">
+    <div class="photos stagger">
+      <img src="img/med-doctor.jpg" alt="의료진 프로필 촬영" style="--i:0">
+      <img src="img/med-lobby.jpg" alt="병원 대기실 촬영" style="--i:1">
+      <img src="img/med-surgery.jpg" alt="진료 장면 촬영" style="--i:2">
+    </div>
+    <div>
+      <p class="label fade">Medical Division</p>
+      <h2 class="sec-title fade">환자가 믿고 찾아오는<br>병원을 만듭니다</h2>
+      <p class="sec-lede fade">환자는 정보만 찾지 않습니다. 병원의 전문성과 치료 철학, 믿을 만한 의료진을 확인하고 싶어 합니다. 현직 의사 자문진과 함께 기획합니다.</p>
+      <div class="big-num fade"><b data-count="80" data-suffix="%+">80%+</b><span>매월 800~1,000건 발행 콘텐츠 중 상위노출 비율</span></div>
+      <div class="svc"><ul class="stagger">
+        <li style="--i:0"><b>병원 브랜드 블로그</b><span>임상글·칼럼글·정보성글 기획, 홈페이지형 블로그 제작</span></li>
+        <li style="--i:1"><b>최적화 블로그 배포</b><span>"지역+진료과목" 키워드까지 상위노출 확대</span></li>
+        <li style="--i:2"><b>구글 SEO · 인블로그</b><span>네이버와 구글 검색을 한 번의 기획으로</span></li>
+        <li style="--i:3"><b>병원 전문 체험단</b><span>블로그·인스타 릴스 방문 후기</span></li>
+        <li style="--i:4"><b>사진·영상 촬영</b><span>전문 포토그래퍼 디렉팅, 의료진 프로필·시설·브랜딩 영상</span></li>
+        <li style="--i:5"><b>해외 환자 유치</b><span>일본 SNS 운영, 현지 체험단, 라인·강남언니 응대</span></li>
+        <li style="--i:6"><b>제약 · 개원 지원</b><span>제약사 거래병원 마케팅, 의약품 CSO, 인테리어 협력</span></li>
+      </ul></div>
+      <div class="who fade"><span>피부과</span><span>성형외과</span><span>한의원</span><span>치과</span><span>안과</span><span>제약사</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- F&B / BRAND -->
+<section class="division f" id="brand">
+  <div class="wrap split">
+    <div class="photos stagger">
+      <img src="img/fnb-rest3.jpg" alt="레스토랑 체험단 음식 사진" style="--i:0">
+      <img src="img/fnb-shrimp.jpg" alt="쉬림프쉐프 체험단 블로그" style="--i:1">
+      <img src="img/fnb-oat.jpg" alt="어메이징오트 배송형 체험단" style="--i:2">
+    </div>
+    <div>
+      <p class="label fade">F&amp;B · Brand Division</p>
+      <h2 class="sec-title fade">손님이 줄 서는<br>매장과 브랜드를 만듭니다</h2>
+      <p class="sec-lede fade">자영업자와 소상공인의 성장이 곧 요니홀딩스의 성장입니다. 합리적인 비용으로 빠르게 알리고, 방문과 매출로 이어지게 합니다.</p>
+      <div class="big-num fade"><b data-count="20000" data-suffix="+">20,000+</b><span>지역·업종별로 골라 보내는 블로거·인플루언서 DB</span></div>
+      <div class="svc"><ul class="stagger">
+        <li style="--i:0"><b>방문형 체험단</b><span>음식점·카페·바·팝업스토어 블로그·인스타 후기</span></li>
+        <li style="--i:1"><b>배송형 체험단</b><span>식품·화장품·생활용품 사용 후기</span></li>
+        <li style="--i:2"><b>상위노출 바이럴</b><span>플레이스·키워드 자동완성·카페·지식인</span></li>
+        <li style="--i:3"><b>퍼포먼스 광고</b><span>인스타그램·페이스북 광고로 가맹·고객 DB 확보</span></li>
+        <li style="--i:4"><b>중국 샤오홍슈</b><span>재한 중국인 인플루언서로 관광객 유치</span></li>
+        <li style="--i:5"><b>기업·공공 종합대행</b><span>SNS 운영, 언론 배포, 디자인, 영상, 수출바우처</span></li>
+        <li style="--i:6"><b>공공 지원사업 수행</b><span>2025 서울시 소상공인 온라인 판로개척(바이럴) 사업 참여</span></li>
+      </ul></div>
+      <div class="who fade"><span>음식점</span><span>카페·바</span><span>프랜차이즈</span><span>식품·화장품</span><span>호텔</span><span>공공기관</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="wrap">
+    <p class="label fade">Portfolio</p>
+    <h2 class="sec-title fade">요니홀딩스와 함께한 브랜드</h2>
+    <div class="tabs" role="group" aria-label="포트폴리오 분류">
+      <button type="button" data-f="all" aria-pressed="true">전체<span class="n"></span></button>
+      <button type="button" data-f="med" aria-pressed="false">병의원·제약<span class="n"></span></button>
+      <button type="button" data-f="fnb" aria-pressed="false">F&amp;B·제품<span class="n"></span></button>
+      <button type="button" data-f="pub" aria-pressed="false">기업·공공<span class="n"></span></button>
+    </div>
+    <div class="grid stagger" id="grid">
+      <article class="item" data-cat="med"><div class="thumb"><img loading="lazy" src="img/med-seoultone.jpg" alt=""></div><span class="cat">병의원</span><h4>서울톤피부과의원</h4><p>홈페이지형 브랜드 블로그</p></article>
+      <article class="item" data-cat="med"><div class="thumb"><img loading="lazy" src="img/med-cellin.jpg" alt=""></div><span class="cat">병의원</span><h4>셀린의원</h4><p>병원 홈페이지 · 일본 브랜딩</p></article>
+      <article class="item" data-cat="fnb"><div class="thumb"><img loading="lazy" src="img/fnb-shrimp.jpg" alt=""></div><span class="cat">F&amp;B</span><h4>쉬림프쉐프 마산삼계점</h4><p>방문형 블로그 체험단</p></article>
+      <article class="item" data-cat="pub"><div class="thumb"><img loading="lazy" src="img/hotel.jpg" alt=""></div><span class="cat">기업</span><h4>파나크 바이 소노</h4><p>호텔 BI·CI · 분양 홍보 전체</p></article>
+      <article class="item" data-cat="med"><div class="thumb"><img loading="lazy" src="img/med-pharma.jpg" alt=""></div><span class="cat">제약</span><h4>파마리서치</h4><p>리쥬비엘·리쥬더마 거래병원 마케팅</p></article>
+      <article class="item" data-cat="fnb"><div class="thumb"><img loading="lazy" src="img/fnb-oat.jpg" alt=""></div><span class="cat">제품</span><h4>매일유업 어메이징오트</h4><p>배송형 인스타그램 체험단</p></article>
+      <article class="item" data-cat="fnb"><div class="thumb"><img loading="lazy" src="img/fnb-brown.jpg" alt=""></div><span class="cat">F&amp;B</span><h4>브라운갤러리 압구정</h4><p>칵테일바 블로그 체험단</p></article>
+      <article class="item" data-cat="med"><div class="thumb"><img loading="lazy" src="img/med-beautyocean.jpg" alt=""></div><span class="cat">병의원</span><h4>뷰티오션</h4><p>브랜드 블로그 운영</p></article>
+      <article class="item" data-cat="med"><div class="thumb"><img loading="lazy" src="img/med-reels1.jpg" alt=""></div><span class="cat">병의원</span><h4>피부과 릴스 체험단</h4><p>시술 전후 인스타그램 릴스</p></article>
+      <article class="item" data-cat="fnb"><div class="thumb"><img loading="lazy" src="img/fnb-shabu.jpg" alt=""></div><span class="cat">F&amp;B</span><h4>샤브르정원</h4><p>META 광고 · 가맹 문의 DB 확보</p></article>
+      <article class="item" data-cat="pub"><div class="thumb"><img loading="lazy" src="img/pub-welfare.jpg" alt=""></div><span class="cat">공공</span><h4>서울시복지재단</h4><p>온라인 종합광고 대행</p></article>
+      <article class="item" data-cat="fnb"><div class="thumb"><img loading="lazy" src="img/fnb-rest2.jpg" alt=""></div><span class="cat">F&amp;B</span><h4>레스토랑 체험단</h4><p>방문형 인스타그램 체험단</p></article>
+      <article class="item" data-cat="med"><div class="thumb"><img loading="lazy" src="img/med-japan.jpg" alt=""></div><span class="cat">병의원</span><h4>일본 현지 체험단</h4><p>리쥬란 시술 인스타그램 후기</p></article>
+      <article class="item" data-cat="fnb"><div class="thumb"><img loading="lazy" src="img/fnb-addlab.jpg" alt=""></div><span class="cat">제품</span><h4>addlab</h4><p>클렌징오일 배송형 체험단</p></article>
+      <article class="item" data-cat="pub"><div class="thumb"><img loading="lazy" src="img/pub-gsic.jpg" alt=""></div><span class="cat">공공</span><h4>경기도사회적경제원</h4><p>온라인 종합광고 대행</p></article>
+      <article class="item" data-cat="med"><div class="thumb"><img loading="lazy" src="img/med-inblog.jpg" alt=""></div><span class="cat">병의원</span><h4>조은피부과의원</h4><p>인블로그 · 구글 SEO</p></article>
+      <article class="item" data-cat="fnb"><div class="thumb"><img loading="lazy" src="img/fnb-xhs.jpg" alt=""></div><span class="cat">F&amp;B</span><h4>샤오홍슈 맛집 체험단</h4><p>중국 관광객 대상 방문 콘텐츠</p></article>
+      <article class="item" data-cat="pub"><div class="thumb"><img loading="lazy" src="img/cjc.jpg" alt=""></div><span class="cat">기업</span><h4>씨제이씨협동조합</h4><p>종합광고 · 수출바우처</p></article>
+      <article class="item" data-cat="fnb"><div class="thumb"><img loading="lazy" src="img/fnb-olive.jpg" alt=""></div><span class="cat">제품</span><h4>엑스트라버진 올리브오일</h4><p>배송형 블로그 체험단</p></article>
+      <article class="item" data-cat="med"><div class="thumb"><img loading="lazy" src="img/med-interior.jpg" alt=""></div><span class="cat">병의원</span><h4>병원 인테리어 협력</h4><p>111의원·톡스앤필 외</p></article>
+      <article class="item" data-cat="pub"><div class="thumb"><img loading="lazy" src="img/pub-sen.jpg" alt=""></div><span class="cat">공공</span><h4>서울시교육청</h4><p>온라인 종합광고 대행</p></article>
+      <article class="item" data-cat="fnb"><div class="thumb"><img loading="lazy" src="img/fnb-offbase.jpg" alt=""></div><span class="cat">제품</span><h4>오프베이스 팝업스토어</h4><p>방문형 블로그 체험단</p></article>
+      <article class="item" data-cat="pub"><div class="thumb"><img loading="lazy" src="img/pub-chsu.jpg" alt=""></div><span class="cat">공공</span><h4>충북보건과학대학교</h4><p>온라인 종합광고 대행</p></article>
+      <article class="item" data-cat="pub"><div class="thumb"><img loading="lazy" src="img/brand-design.jpg" alt=""></div><span class="cat">기업</span><h4>세계태권도연맹 · aT공사</h4><p>글로벌 홍보 디자인</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGN & CONTENT -->
+<section class="design" id="design">
+  <div class="wrap">
+    <p class="label fade">Design &amp; Content</p>
+    <h2 class="sec-title fade">홍보물과 SNS 콘텐츠도<br>매달 직접 만듭니다</h2>
+    <p class="sec-lede fade">광고 집행뿐 아니라 배너, 전단지, 카드뉴스, 릴스 썸네일까지 병원과 기관에 필요한 디자인을 월 단위로 맡아 제작합니다.</p>
+    <div class="dz-stats stagger">
+      <div style="--i:0"><b data-count="61" data-suffix="건">61건</b><span>한 병원에 한 달 동안 제작한 디자인<br><small>글로우포트의원 · 2026년 2월</small></span></div>
+      <div style="--i:1"><b data-count="8" data-suffix="종">8종</b><span>X배너·바우처·소개서·안내이미지·전단지·카드뉴스·팝업·포스터</span></div>
+    </div>
+    <div class="dz-grid stagger">
+      <article class="dz m" style="--i:0"><p class="k">병의원 · 월간 디자인 대행</p><h3>글로우포트의원</h3><p>병원 소개서, 시술 안내 이미지, 이벤트 팝업, 포스터와 X배너 등 오프라인·온라인 홍보물 전반을 매달 제작합니다. 의료진 프로필과 시설 촬영도 함께 진행했습니다.</p><div class="tg"><span>소개서</span><span>카드뉴스</span><span>팝업</span><span>X배너</span><span>촬영</span></div></article>
+      <article class="dz p" style="--i:1"><p class="k">대학 · SNS 콘텐츠 운영</p><h3>충북보건과학대학교</h3><p>입시 일정 안내와 수시 홍보카드, 마스코트 '츄호' 릴스 썸네일, 학과 소개, 뉴스레터, 팔로우 이벤트까지 학교 SNS 콘텐츠를 연중 운영합니다.</p><div class="tg"><span>입시 홍보카드</span><span>릴스 썸네일</span><span>뉴스레터</span><span>이벤트</span></div></article>
+      <article class="dz p" style="--i:2"><p class="k">공공 · 콘텐츠 제작</p><h3>경기도사회적경제원</h3><p>사회적경제 정책과 소식을 쉽게 전하는 카드뉴스를 기획하고 제작합니다.</p><div class="tg"><span>카드뉴스</span><span>SNS 운영</span></div></article>
+      <article class="dz p" style="--i:3"><p class="k">문화기관 · 행사·영상</p><h3>ACC 국립아시아문화전당</h3><p>책 읽는 ACC, AI 콘텐츠 공모전, 제로웨스트 이벤트 등 행사 홍보물과 영상 콘텐츠를 제작했습니다.</p><div class="tg"><span>행사 홍보물</span><span>영상</span><span>이벤트</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section class="solutions" id="solutions">
+  <div class="wrap">
+    <p class="label fade">In-house solutions</p>
+    <h2 class="sec-title fade">직접 만든 도구로<br>직접 집행합니다</h2>
+    <p class="sec-lede fade">대행사에 다시 맡기는 구조가 아니라서 단가는 낮고 피드백은 빠릅니다. 두 사업부가 같은 도구와 DB를 함께 씁니다.</p>
+    <div class="tools stagger">
+      <div class="tool" style="--i:0"><p class="k">체험단 서비스</p><h3>다퍼주는언니</h3><p>1세대 파워블로거들이 운영하는 체험단.</p><ul><li>블로그 지수 높은 리뷰어 섭외</li><li>저품질·중복 리뷰어 필터링</li><li>노출 잘 되는 리뷰어 선제안</li></ul></div>
+      <div class="tool" style="--i:1"><p class="k">플레이스 광고 운영</p><h3>ReClick Ads</h3><p>플레이스 노출 성과를 한 화면에서.</p><ul><li>키워드·경쟁업체 비교분석</li><li>리뷰·저장 수 지표 관리</li><li>광고 발주·견적·크레딧 관리</li></ul></div>
+      <div class="tool" style="--i:2"><p class="k">AI 기자단</p><h3>포스티오</h3><p>이미지 3종과 1,200자 이상 정보형 원고 발행.</p><ul><li>실제 리뷰어 계정으로 발행</li><li>원고·이미지 품질 검수</li><li><a href="https://postio.pe.kr/" target="_blank" rel="noopener">postio.pe.kr ↗</a></li></ul></div>
+    </div>
+    <div class="platform">
+      <div>
+        <p class="label fade">AI Platform</p>
+        <h3 class="sec-title fade" style="font-size:clamp(26px,3.4vw,40px)">체험단 시장의<br>새로운 모델</h3>
+        <div class="road stagger">
+          <div style="--i:0"><b>2026</b><div><h4>THE 퍼주는언니</h4><p>AI 광고주↔체험단 매칭, 인플루언서 프로필, 장바구니, PUSH</p></div></div>
+          <div style="--i:1"><b>2027</b><div><h4>브랜드–인플루언서 커넥트</h4><p>조건 협상, 1:1 채팅, 해외 인플루언서·바이어 연계</p></div></div>
+        </div>
+      </div>
+      <img class="fade" src="img/platform.jpg" alt="개발 중인 AI 체험단 플랫폼 화면">
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY / TEAM -->
+<section class="team-sec" id="company">
+  <div class="wrap">
+    <p class="label fade">Company</p>
+    <h2 class="sec-title fade">파워블로거와 의사가<br>한 팀으로 일합니다</h2>
+    <p class="sec-lede fade">2009년부터 활동한 1세대 파워블로거 정ㅇㅇ 대표가 2022년 설립했습니다. 광주 본사와 광교 지사를 거점으로 전국 어디든 찾아갑니다.</p>
+    <div class="team stagger">
+      <div class="person" style="--i:0"><p class="role">DIRECTOR</p><h4>정ㅇㅇ 이사</h4><p class="pos">마케팅 실행</p><ul><li>1세대 파워블로그 (패션)</li><li>(주)이랜드월드 MD</li></ul></div>
+      <div class="person" style="--i:1"><p class="role">DIRECTOR</p><h4>황ㅇㅇ 이사</h4><p class="pos">기획 / 경영</p><ul><li>서울시교육청 홍보자문관</li><li>대통령 직속 위원회 홍보PM</li></ul></div>
+      <div class="person" style="--i:2"><p class="role">사외이사</p><h4>윤ㅇㅇ 이사</h4><p class="pos">병원·피부 마케팅 자문</p><ul><li>일반의 (연세대 의대 졸)</li><li>現 글로우ㅇㅇ의원 대표원장</li></ul></div>
+      <div class="person" style="--i:3"><p class="role">사외이사</p><h4>윤ㅇㅇ 이사</h4><p class="pos">병원 마케팅 자문</p><ul><li>가정의학과 전문의</li><li>前 루ㅇㅇ병원 원장</li></ul></div>
+      <div class="person" style="--i:4"><p class="role">TEAM LEADER</p><h4>백ㅇㅇ 팀장</h4><p class="pos">영상 / 디자인</p><ul><li>시각디자인과 졸업</li></ul></div>
+      <div class="person" style="--i:5"><p class="role">TEAM LEADER</p><h4>이ㅇㅇ 팀장</h4><p class="pos">중국 마케팅 총괄</p><ul><li>샤오홍슈 마케팅 전문가</li></ul></div>
+      <div class="person" style="--i:6"><p class="role">MANAGER</p><h4>박ㅇㅇ 대리</h4><p class="pos">인플루언서 섭외 / 운영</p><ul><li>인스타그램 인플루언서</li></ul></div>
+      <div class="person" style="--i:7"><p class="role">MANAGER</p><h4>이ㅇㅇ 대리</h4><p class="pos">해외 마케팅 / 영상제작</p><ul><li>콘센트릭스 말레이시아 지사</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENT LOGO BAND -->
+<section class="clients-band" aria-labelledby="clients-title">
+  <div class="wrap"><p class="label fade">Clients</p><h2 class="sec-title fade" id="clients-title" style="font-size:clamp(26px,3.4vw,40px)">함께해 주시는 분들</h2></div>
+  <div class="logo-rows fade">
+    <div class="logo-row"><ul class="logo-track"><li><img src="img/logo/pharmaresearch.png" alt="파마리서치" loading="lazy"></li><li><img src="img/logo/maeil.png" alt="매일유업" loading="lazy"></li><li><img src="img/logo/seoultone.png" alt="서울톤피부과의원" loading="lazy"></li><li><img src="img/logo/gyeonggi.png" alt="경기도" loading="lazy"></li><li><img src="img/logo/rodam.png" alt="로담한의원" loading="lazy"></li><li><img src="img/logo/cheongdam-fnb.png" alt="청담F&amp;B" loading="lazy"></li><li><img src="img/logo/youandi.png" alt="YOU&amp;I" loading="lazy"></li><li><img src="img/logo/jjokgalbi.png" alt="쪽갈비대통령" loading="lazy"></li><li><img src="img/logo/ragyeongchan.png" alt="라경찬한의원" loading="lazy"></li><li><img src="img/logo/shabru.png" alt="샤브르정원" loading="lazy"></li><li><img src="img/logo/khealth.png" alt="K-헬스미래추진단" loading="lazy"></li><li class="txt">글로우포트의원</li><li class="txt">샤인원의원</li><li class="txt">서울더블유안과</li><li aria-hidden="true"><img src="img/logo/pharmaresearch.png" alt="" loading="lazy"></li><li aria-hidden="true"><img src="img/logo/maeil.png" alt="" loading="lazy"></li><li aria-hidden="true"><img src="img/logo/seoultone.png" alt="" loading="lazy"></li><li aria-hidden="true"><img src="img/logo/gyeonggi.png" alt="" loading="lazy"></li><li aria-hidden="true"><img src="img/logo/rodam.png" alt="" loading="lazy"></li><li aria-hidden="true"><img src="img/logo/cheongdam-fnb.png" alt="" loading="lazy"></li><li aria-hidden="true"><img src="img/logo/youandi.png" alt="" loading="lazy"></li><li aria-hidden="true"><img src="img/logo/jjokgalbi.png" alt="" loading="lazy"></li><li aria-hidden="true"><img src="img/logo/ragyeongchan.png" alt="" loading="lazy"></li><li aria-hidden="true"><img src="img/logo/shabru.png" alt="" loading="lazy"></li><li aria-hidden="true"><img src="img/logo/khealth.png" alt="" loading="lazy"></li><li class="txt" aria-hidden="true">글로우포트의원</li><li class="txt" aria-hidden="true">샤인원의원</li><li class="txt" aria-hidden="true">서울더블유안과</li></ul></div>
+    <div class="logo-row rev"><ul class="logo-track"><li><img src="img/logo/danahyeon.png" alt="단아연한의원" loading="lazy"></li><li><img src="img/logo/addlab.png" alt="addlab" loading="lazy"></li><li><img src="img/logo/wannabe.png" alt="워너비라인의원" loading="lazy"></li><li><img src="img/logo/maisonrhea.png" alt="MAISON RHEA" loading="lazy"></li><li><img src="img/logo/chaoreum.png" alt="더차오름클리닉" loading="lazy"></li><li><img src="img/logo/dierneas.png" alt="DIERNEAS" loading="lazy"></li><li><img src="img/logo/cheongdam-personal.png" alt="청담퍼스널의원" loading="lazy"></li><li><img src="img/logo/madeyou.png" alt="메이드유" loading="lazy"></li><li><img src="img/logo/beautyocean.png" alt="BEAUTY OCEAN" loading="lazy"></li><li><img src="img/logo/cjc.png" alt="씨제이씨협동조합" loading="lazy"></li><li class="txt">충북보건과학대학교</li><li class="txt">국립아시아문화전당</li><li class="txt">서울시교육청</li><li aria-hidden="true"><img src="img/logo/danahyeon.png" alt="" loading="lazy"></li><li aria-hidden="true"><img src="img/logo/addlab.png" alt="" loading="lazy"></li><li aria-hidden="true"><img src="img/logo/wannabe.png" alt="" loading="lazy"></li><li aria-hidden="true"><img src="img/logo/maisonrhea.png" alt="" loading="lazy"></li><li aria-hidden="true"><img src="img/logo/chaoreum.png" alt="" loading="lazy"></li><li aria-hidden="true"><img src="img/logo/dierneas.png" alt="" loading="lazy"></li><li aria-hidden="true"><img src="img/logo/cheongdam-personal.png" alt="" loading="lazy"></li><li aria-hidden="true"><img src="img/logo/madeyou.png" alt="" loading="lazy"></li><li aria-hidden="true"><img src="img/logo/beautyocean.png" alt="" loading="lazy"></li><li aria-hidden="true"><img src="img/logo/cjc.png" alt="" loading="lazy"></li><li class="txt" aria-hidden="true">충북보건과학대학교</li><li class="txt" aria-hidden="true">국립아시아문화전당</li><li class="txt" aria-hidden="true">서울시교육청</li></ul></div>
+  </div>
+</section>
+</main>
+
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <p class="label fade" style="color:#c3a4ff">Contact</p>
+    <h2 class="fade" style="margin-top:14px">광고가 필요한 순간,<br>요니홀딩스</h2>
+    <p class="lead fade">메일 제목에 [병의원] 또는 [F&amp;B·브랜드]를 붙이고 업종·지역·원하시는 채널을 적어 보내주세요. 담당 사업부에서 맞춤 제안서로 회신드립니다.</p>
+    <div class="mail fade">
+      <code id="email">jyjung@yonyholdings.co.kr</code>
+      <button class="btn light" id="copyBtn" type="button">이메일 복사</button>
+      <span class="copied" id="copied" aria-live="polite"></span>
+    </div>
+    <div class="foot">
+      <div><b>상호명</b>주식회사 요니홀딩스</div>
+      <div><b>대표</b>정지연</div>
+      <div><b>본사</b>광주광역시 동구 동계천로 150, 206-3호 (I-PLEX 광주)</div>
+      <div><b>수원지사</b>경기도 수원시 영통구 법조로 38</div>
+    </div>
+    <div class="foot-brand"><p class="copy" style="margin-top:0">© 2026 YONY HOLDINGS. All rights reserved.</p><img src="img/yh-white.png" alt="요니홀딩스 로고"></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var anim=document.documentElement.classList.contains('anim');
+
+  /* stagger: give each child its order number if not set */
+  document.querySelectorAll('.stagger').forEach(function(g){
+    Array.prototype.forEach.call(g.children,function(c,i){ if(!c.style.getPropertyValue('--i')) c.style.setProperty('--i',i); });
+  });
+
+  /* count-up */
+  function fmt(n){return n.toLocaleString('ko-KR')}
+  function countUp(el){
+    var end=+el.dataset.count, suf=el.dataset.suffix||'', t0=null, dur=1600;
+    if(!anim){el.textContent=fmt(end)+suf;return}
+    function step(t){ if(!t0)t0=t; var p=Math.min((t-t0)/dur,1); var e=1-Math.pow(1-p,3);
+      el.textContent=fmt(Math.round(end*e))+suf; if(p<1)requestAnimationFrame(step); }
+    el.textContent='0'+suf; requestAnimationFrame(step);
+  }
+
+  if(anim){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var el=e.target;
+        if(el.dataset.count) countUp(el); else el.classList.add('in');
+        io.unobserve(el);
+      });
+    },{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.fade,.stagger,[data-count]').forEach(function(el){io.observe(el)});
+  }
+
+  /* portfolio filter */
+  var grid=document.getElementById('grid'), items=[].slice.call(grid.children), btns=document.querySelectorAll('.tabs button');
+  btns.forEach(function(b){
+    var f=b.dataset.f, n=items.filter(function(it){return f==='all'||it.dataset.cat===f}).length;
+    b.querySelector('.n').textContent=n;
+    b.addEventListener('click',function(){
+      btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+      var k=0;
+      items.forEach(function(it){
+        var show=f==='all'||it.dataset.cat===f;
+        it.hidden=!show;
+        if(show) it.style.setProperty('--i',k++);
+      });
+      if(anim){ grid.classList.remove('in'); void grid.offsetWidth; grid.classList.add('in'); }
+    });
+  });
+
+  /* copy email */
+  document.getElementById('copyBtn').addEventListener('click',function(){
+    var t=document.getElementById('email').textContent, msg=document.getElementById('copied');
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('email'));var s=getSelection();s.removeAllRanges();s.addRange(r);msg.textContent='주소를 선택했어요. Ctrl+C로 복사하세요.';}
+    try{navigator.clipboard.writeText(t).then(function(){msg.textContent='복사되었습니다.';},sel);}catch(e){sel();}
+  });
+})();
+</script>
+
+</body>
+</html>
