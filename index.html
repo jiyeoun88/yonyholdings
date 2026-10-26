@@ -735,7 +735,7 @@ nav.menu a.cta{color:#13132a;background:#fff;font-weight:600;margin-left:8px}
   function sendMail(data){
     data._template='table'; data._captcha='false';
     return fetch(MAILTO,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
-      .then(function(r){return r.json().then(function(j){ if(!r.ok||String(j.success)==='false') throw new Error(j.message||'fail'); return j; });});
+      .then(function(r){return r.json().then(function(j){ if(!r.ok||String(j.success)==='false'){ console.warn('[문의 전송]',r.status,j); throw new Error(j.message||'fail'); } return j; });});
   }
   function okContact(v){return /^[0-9\-\s+()]{9,}$/.test(v)||/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)}
   function now(){return new Date().toLocaleString('ko-KR',{timeZone:'Asia/Seoul'})}
