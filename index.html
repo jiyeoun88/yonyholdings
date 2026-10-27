@@ -223,7 +223,9 @@ nav.menu a.cta{color:#13132a;background:#fff;font-weight:600;margin-left:8px}
 .platform{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:clamp(28px,5vw,64px);align-items:center;margin-top:80px}
 .platform img{border-radius:18px;border:1px solid var(--line);width:100%}
 .road{display:grid;gap:18px;margin-top:22px}
-.road div{display:grid;grid-template-columns:72px minmax(0,1fr);gap:14px}
+.road>div{display:grid;grid-template-columns:72px minmax(0,1fr);gap:14px;align-items:start}
+.road>div>div{min-width:0}
+.road h4{word-break:keep-all}
 .road b{font-family:var(--display);font-size:26px;font-weight:800;line-height:1.1}
 .road h4{font-size:17px}
 .road p{color:var(--muted);font-size:14.5px;margin-top:2px}
