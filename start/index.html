@@ -231,7 +231,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <p class="sub" data-t="sub">손님은 네이버에서 검색하고, 첫 화면에서 갈 곳을 고릅니다. 지금 우리 가게가 몇 번째에 있는지, 왜 밀리는지 <b>무료로 진단</b>해 드립니다.</p>
         <div class="ctas">
           <a class="btn pri" href="#apply">무료 진단 신청하기 →</a>
-          <a class="btn kk" href="https://pf.kakao.com/_mxjFts" target="_blank" rel="noopener">카카오톡 상담</a>
+          <a class="btn kk" href="https://pf.kakao.com/_cYJNX" target="_blank" rel="noopener">카카오톡 상담</a>
         </div>
         <ul class="perks">
           <li>무료 플레이스·키워드 진단</li>
@@ -352,7 +352,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <label class="agree"><input type="checkbox" name="agree" required><span>상담을 위한 <a href="/privacy.html" target="_blank">개인정보 수집·이용</a>에 동의합니다. (필수)</span></label>
       <button class="btn pri" type="submit">무료 진단 신청하기</button>
       <p class="msg" id="msg" aria-live="polite"></p>
-      <p class="alt">급하시면 <a href="https://pf.kakao.com/_mxjFts" target="_blank" rel="noopener">카카오톡 상담</a>으로 바로 물어보세요</p>
+      <p class="alt">급하시면 <a href="https://pf.kakao.com/_cYJNX" target="_blank" rel="noopener">카카오톡 상담</a>으로 바로 물어보세요</p>
     </form>
   </div>
 </section>
@@ -377,7 +377,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </footer>
 
-<div class="bar"><a class="k" href="https://pf.kakao.com/_mxjFts" target="_blank" rel="noopener">카카오톡 상담</a><a class="m" href="#apply">무료 진단 신청</a></div>
+<div class="bar"><a class="k" href="https://pf.kakao.com/_cYJNX" target="_blank" rel="noopener">카카오톡 상담</a><a class="m" href="#apply">무료 진단 신청</a></div>
 
 <script>
 (function(){
@@ -456,7 +456,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       '접수 시각':new Date().toLocaleString('ko-KR',{timeZone:'Asia/Seoul'})
     }))}).then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)==='false'){console.warn('[신청 전송]',r.status,j);throw new Error('fail')}})})
     .then(function(){ if(window.gtag) gtag('event','generate_lead',{method:'landing_'+aud}); m.textContent='신청되었습니다! 감사 페이지로 이동합니다…'; setTimeout(function(){location.href='/thanks.html'},600); })
-    .catch(function(){ m.className='msg err'; m.innerHTML='전송에 실패했어요. 잠시 후 다시 시도하시거나 <a href="https://pf.kakao.com/_mxjFts" target="_blank" rel="noopener">카카오톡</a>으로 문의해 주세요.'; btn.disabled=false; btn.textContent='무료 진단 신청하기'; });
+    .catch(function(){ m.className='msg err'; m.innerHTML='전송에 실패했어요. 잠시 후 다시 시도하시거나 <a href="https://pf.kakao.com/_cYJNX" target="_blank" rel="noopener">카카오톡</a>으로 문의해 주세요.'; btn.disabled=false; btn.textContent='무료 진단 신청하기'; });
   });
 })();
 </script>

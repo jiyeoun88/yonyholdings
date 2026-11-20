@@ -733,7 +733,7 @@ nav.menu a.cta{color:#13132a;background:#fff;font-weight:600;margin-left:8px}
       <p class="label fade">FAQ</p>
       <h2 class="sec-title fade" style="font-size:clamp(28px,3.6vw,44px)">자주 묻는 질문</h2>
       <p class="sec-lede fade">더 궁금한 점은 카카오톡이나 이메일로 편하게 물어보세요.</p>
-      <a class="btn kakao fade" href="https://pf.kakao.com/_mxjFts" target="_blank" rel="noopener" style="margin-top:24px">카카오톡으로 문의하기</a>
+      <a class="btn kakao fade" href="https://pf.kakao.com/_cYJNX" target="_blank" rel="noopener" style="margin-top:24px">카카오톡으로 문의하기</a>
     </div>
     <div class="qa-list stagger">
       <details class="qa" open><summary><span class="q">Q</span>광고 비용은 어떻게 되나요?<span class="ic" aria-hidden="true"></span></summary><p>업종, 지역, 진행할 채널(체험단·브랜드 블로그·상위노출·해외 마케팅 등)과 기간에 따라 달라집니다. 무료 상담에서 목표와 예산을 듣고, 꼭 필요한 항목만 담은 맞춤 제안서와 견적을 보내드립니다. 기획부터 섭외·실행까지 직접 하는 광고실행사라 소통이 빠르고, 예산이 어디에 쓰이는지 투명하게 확인하실 수 있습니다.</p></details>
@@ -756,7 +756,7 @@ nav.menu a.cta{color:#13132a;background:#fff;font-weight:600;margin-left:8px}
     <div class="hours fade" aria-label="문의 답변 시간">
       <div><b>문의 답변 시간</b><span>평일 10:00 ~ 18:00</span></div>
       <div><b>회신</b><span>접수 후 24시간 이내</span></div>
-      <a class="btn kakao hours-k" href="https://pf.kakao.com/_mxjFts" target="_blank" rel="noopener">카카오톡 상담하기</a>
+      <a class="btn kakao hours-k" href="https://pf.kakao.com/_cYJNX" target="_blank" rel="noopener">카카오톡 상담하기</a>
     </div>
     <div class="mail fade">
       <code id="email">jyjung@yonyholdings.co.kr</code>
@@ -792,7 +792,7 @@ nav.menu a.cta{color:#13132a;background:#fff;font-weight:600;margin-left:8px}
   <div class="cb-chips" id="cbChips"></div>
   <form class="cb-in" id="cbIn"><input id="cbText" autocomplete="off" placeholder="메시지를 입력하세요" maxlength="1000"><button type="submit">보내기</button></form>
 </section>
-<div class="sticky-cta"><a class="sc-k" href="https://pf.kakao.com/_mxjFts" target="_blank" rel="noopener"><span>카카오톡 상담</span><small>평일 10~18시</small></a><a class="sc-m" href="#contact"><span>광고 문의</span><small>24시간 이내 회신</small></a></div>
+<div class="sticky-cta"><a class="sc-k" href="https://pf.kakao.com/_cYJNX" target="_blank" rel="noopener"><span>카카오톡 상담</span><small>평일 10~18시</small></a><a class="sc-m" href="#contact"><span>광고 문의</span><small>24시간 이내 회신</small></a></div>
 
 <script>
 (function(){
@@ -872,14 +872,14 @@ nav.menu a.cta{color:#13132a;background:#fff;font-weight:600;margin-left:8px}
     var btn=f.querySelector('button'); btn.disabled=true; btn.textContent='접수 중…';
     sendMail({_subject:'[홈페이지 문의] '+t,'접수 경로':'홈페이지 문의 폼','제목':t,'연락처':c,'문의 내용':b,'접수 시각':now()})
       .then(function(){f.reset();fm.textContent='접수되었습니다. 감사 페이지로 이동합니다…';if(window.gtag)gtag('event','generate_lead',{method:'form'});setTimeout(function(){location.href='thanks.html'},600);})
-      .catch(function(){fm.className='qf-msg err';fm.innerHTML='전송에 실패했어요. 잠시 후 다시 시도하시거나 <a href="https://pf.kakao.com/_mxjFts" target="_blank" rel="noopener" style="color:#FEE500">카카오톡</a>으로 문의해 주세요.';})
+      .catch(function(){fm.className='qf-msg err';fm.innerHTML='전송에 실패했어요. 잠시 후 다시 시도하시거나 <a href="https://pf.kakao.com/_cYJNX" target="_blank" rel="noopener" style="color:#FEE500">카카오톡</a>으로 문의해 주세요.';})
       .then(function(){btn.disabled=false;btn.textContent='문의 접수하기';});
   });
 
   /* ===== AI 상담원 (단계형 상담 챗봇) ===== */
   var fab=document.getElementById('cbFab'), box=document.getElementById('cb'), log=document.getElementById('cbLog'),
       chips=document.getElementById('cbChips'), inp=document.getElementById('cbIn'), txt=document.getElementById('cbText');
-  var KAKAO='https://pf.kakao.com/_mxjFts';
+  var KAKAO='https://pf.kakao.com/_cYJNX';
   var st={step:0,ind:'',name:'',contact:'',q:'',lines:[]}, started=false, sent=false;
   function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   function say(who,text,html){
