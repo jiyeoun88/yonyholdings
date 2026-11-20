@@ -254,6 +254,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .step-grid.five{grid-template-columns:repeat(5,minmax(0,1fr))}
 @media (max-width:960px){.step-grid.five{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
+<script src="/kakao-alert.js" defer></script>
 </head>
 <body>
 
@@ -476,6 +477,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   } else document.querySelectorAll('.rv').forEach(function(n){n.classList.add('in')});
 
   var MAILTO='https://formsubmit.co/ajax/jyjung@yonyholdings.co.kr';
+  function alertAnd(d){ if(window.yonyAlert) yonyAlert(d); return d; }
   var f=el('#lead'), m=el('#msg');
   function okContact(v){return /^[0-9\-\s+()]{9,}$/.test(v)||/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)}
   f.addEventListener('submit',function(e){
@@ -487,11 +489,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     if(!E.agree.checked){m.className='msg err';m.textContent='개인정보 수집·이용에 동의해 주세요.';return}
     var kind=[].slice.call(f.querySelectorAll('[name=kind]:checked')).map(function(x){return x.value}).join(', ')||'-';
     var btn=f.querySelector('button'); btn.disabled=true; btn.textContent='보내는 중…';
-    fetch(MAILTO,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({
+    fetch(MAILTO,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(alertAnd({
       _subject:'[홈페이지 제작 문의] '+biz, _template:'table', _captcha:'false', _cc:'jee_en_@naver.com',
       '접수 경로':'랜딩페이지(/web) 홈페이지 제작 문의','회사·상호명':biz,'업종':E.industry.value.trim()||'-','담당자':E.person.value.trim()||'-','연락처':c,'제작 종류':kind,'희망 오픈 시기':E.when.value,'기존 홈페이지':E.url.value.trim()||'-','요청사항':E.memo.value.trim()||'-',
       '접수 시각':new Date().toLocaleString('ko-KR',{timeZone:'Asia/Seoul'})
-    })}).then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)==='false'){console.warn('[문의 전송]',r.status,j);throw new Error('fail')}})})
+    }))}).then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)==='false'){console.warn('[문의 전송]',r.status,j);throw new Error('fail')}})})
     .then(function(){ if(window.gtag) gtag('event','generate_lead',{method:'landing_web'}); m.textContent='문의가 접수되었습니다! 감사 페이지로 이동합니다…'; setTimeout(function(){location.href='/thanks.html'},600); })
     .catch(function(){ m.className='msg err'; m.innerHTML='전송에 실패했어요. 잠시 후 다시 시도하시거나 <a href="https://pf.kakao.com/_mxjFts" target="_blank" rel="noopener">카카오톡</a>으로 문의해 주세요.'; btn.disabled=false; btn.textContent='제작 문의 보내기'; });
   });

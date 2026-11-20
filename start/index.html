@@ -206,6 +206,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 </style>
+<script src="/kakao-alert.js" defer></script>
 </head>
 <body>
 
@@ -436,6 +437,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
   // form
   var MAILTO='https://formsubmit.co/ajax/jyjung@yonyholdings.co.kr';
+  function alertAnd(d){ if(window.yonyAlert) yonyAlert(d); return d; }
   var f=el('#lead'), m=el('#msg');
   function okContact(v){return /^[0-9\-\s+()]{9,}$/.test(v)||/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)}
   f.addEventListener('submit',function(e){
@@ -448,11 +450,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     var svc=[].slice.call(f.querySelectorAll('[name=svc]:checked')).map(function(x){return x.value}).join(', ')||'-';
     var type=aud==='med'?'병의원':'매장·소상공인';
     var btn=f.querySelector('button'); btn.disabled=true; btn.textContent='신청 중…';
-    fetch(MAILTO,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({
+    fetch(MAILTO,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(alertAnd({
       _subject:'[랜딩 무료진단] '+type+' / '+biz, _template:'table', _captcha:'false', _cc:'jee_en_@naver.com',
       '접수 경로':'랜딩페이지(/start) 무료 진단','업종 구분':type,'상호·병원명':biz,'지역':E.area.value.trim()||'-','담당자':E.person.value.trim()||'-','연락처':c,'관심 서비스':svc,'궁금한 점':E.memo.value.trim()||'-',
       '접수 시각':new Date().toLocaleString('ko-KR',{timeZone:'Asia/Seoul'})
-    })}).then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)==='false'){console.warn('[신청 전송]',r.status,j);throw new Error('fail')}})})
+    }))}).then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)==='false'){console.warn('[신청 전송]',r.status,j);throw new Error('fail')}})})
     .then(function(){ if(window.gtag) gtag('event','generate_lead',{method:'landing_'+aud}); m.textContent='신청되었습니다! 감사 페이지로 이동합니다…'; setTimeout(function(){location.href='/thanks.html'},600); })
     .catch(function(){ m.className='msg err'; m.innerHTML='전송에 실패했어요. 잠시 후 다시 시도하시거나 <a href="https://pf.kakao.com/_mxjFts" target="_blank" rel="noopener">카카오톡</a>으로 문의해 주세요.'; btn.disabled=false; btn.textContent='무료 진단 신청하기'; });
   });
