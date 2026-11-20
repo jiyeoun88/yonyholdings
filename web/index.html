@@ -253,6 +253,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .pkg .price a{color:var(--accent-ink)}
 .step-grid.five{grid-template-columns:repeat(5,minmax(0,1fr))}
 @media (max-width:960px){.step-grid.five{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.ref-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:36px}
+@media (max-width:900px){.ref-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.ref-grid{grid-template-columns:1fr}}
+.ref{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.ref:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(19,19,42,.12)}
+.ref .thumb{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;border-bottom:1px solid var(--line);background:var(--bg2)}
+.ref .thumb img{width:100%;height:100%;object-fit:cover;object-position:top left;transition:transform .5s}
+.ref:hover .thumb img{transform:scale(1.04)}
+.ref .wip{position:absolute;top:10px;left:10px;background:var(--hot);color:#fff;font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px}
+.ref .body{display:flex;flex-direction:column;gap:3px;padding:16px 18px 18px;flex:1}
+.ref small{font-size:12px;font-weight:700;color:var(--accent-ink);letter-spacing:.02em}
+.ref b{font-size:17px;letter-spacing:-.02em;line-height:1.4}
+.ref .desc{font-size:14px;color:var(--muted);line-height:1.55}
+.ref .dom{margin-top:auto;padding-top:10px;display:flex;justify-content:space-between;gap:8px;font-size:13px;color:var(--muted)}
+.ref .dom i{font-style:normal;font-weight:700;color:var(--accent-ink);white-space:nowrap}
 </style>
 <script src="/kakao-alert.js" defer></script>
 </head>
@@ -329,23 +345,49 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </section>
 
-<section class="cases">
+<section class="cases" id="reference">
   <div class="wrap">
     <div class="center rv">
-      <p class="kicker">Our work</p>
-      <h2 class="h2">직접 만들고, 직접 운영합니다</h2>
-      <p class="lede">요니홀딩스 홈페이지와 광고용 랜딩페이지도 모두 저희가 기획·제작·운영하고 있습니다.</p>
+      <p class="kicker">Reference</p>
+      <h2 class="h2">요니홀딩스가 만든 홈페이지</h2>
+      <p class="lede">병의원·학회·기업 홈페이지부터 광고용 랜딩페이지까지.<br>카드를 누르면 실제 사이트를 보실 수 있어요.</p>
     </div>
-    <div class="case-grid">
-      <a class="case rv" href="/" target="_blank" rel="noopener">
-        <img src="/img/web/case-home.jpg" alt="요니홀딩스 회사 홈페이지 첫 화면" loading="lazy">
-        <div><small>기업 홈페이지</small><h3>요니홀딩스 회사 홈페이지</h3><p>사업부별 소개, 포트폴리오, 문의 양식과 상담 챗봇까지 담은 회사 대표 사이트</p>
-        <p class="tags"><span>반응형</span><span>검색 등록</span><span>문의 양식</span><span>방문자 분석</span></p></div>
+    <div class="ref-grid">
+      <a class="ref rv" href="https://savingmyteeth.com/" target="_blank" rel="noopener">
+        <span class="thumb"><img src="/img/web/ref/savingmyteeth.jpg" alt="삼성플란트치과의원 홈페이지 첫 화면" loading="lazy"></span>
+        <span class="body"><small>병의원 · 치과</small><b>삼성플란트치과의원</b><span class="desc">자기치아 살리기 진료를 앞세운 치과 홈페이지</span><span class="dom">savingmyteeth.com <i>사이트 보기 ↗</i></span></span>
       </a>
-      <a class="case rv" href="/start/" target="_blank" rel="noopener">
-        <img src="/img/web/case-start.jpg" alt="무료 진단 신청 랜딩페이지 화면" loading="lazy">
-        <div><small>광고용 랜딩페이지</small><h3>무료 진단 신청 랜딩페이지</h3><p>업종(매장·병의원)에 따라 문구가 바뀌고, 신청서가 바로 메일로 접수되는 상담 유도 페이지</p>
-        <p class="tags"><span>전환 중심</span><span>업종별 문구</span><span>신청서 접수</span></p></div>
+      <a class="ref rv" href="https://www.urology.or.kr/" target="_blank" rel="noopener">
+        <span class="thumb"><img src="/img/web/ref/urology.jpg" alt="대한비뇨의학회 홈페이지 첫 화면" loading="lazy"></span>
+        <span class="body"><small>학회</small><b>대한비뇨의학회</b><span class="desc">공지·학술행사·회원 서비스를 담은 학회 공식 사이트</span><span class="dom">urology.or.kr <i>사이트 보기 ↗</i></span></span>
+      </a>
+      <a class="ref rv" href="https://www.kates.or.kr/main.html" target="_blank" rel="noopener">
+        <span class="thumb"><img src="/img/web/ref/kates.jpg" alt="대한내분비외과학회 홈페이지 첫 화면" loading="lazy"></span>
+        <span class="body"><small>학회</small><b>대한내분비외과학회</b><span class="desc">학회 소식, 학술대회, 학회지를 한곳에 모은 공식 사이트</span><span class="dom">kates.or.kr <i>사이트 보기 ↗</i></span></span>
+      </a>
+      <a class="ref rv" href="https://www.kmpcb.or.kr/" target="_blank" rel="noopener">
+        <span class="thumb"><img src="/img/web/ref/kmpcb.jpg" alt="대한의학물리전문인 자격인증위원회 홈페이지 첫 화면" loading="lazy"></span>
+        <span class="body"><small>협회 · 기관</small><b>대한의학물리전문인 자격인증위원회</b><span class="desc">자격시험·교육·회원 페이지를 갖춘 인증기관 사이트</span><span class="dom">kmpcb.or.kr <i>사이트 보기 ↗</i></span></span>
+      </a>
+      <a class="ref rv" href="https://www.seilsc.com/" target="_blank" rel="noopener">
+        <span class="thumb"><img src="/img/web/ref/seilsc.jpg" alt="(주)세일쇼케이스 홈페이지 첫 화면" loading="lazy"></span>
+        <span class="body"><small>기업 · 제조</small><b>(주)세일쇼케이스</b><span class="desc">회사·제품·설치사례를 소개하는 제조기업 홈페이지</span><span class="dom">seilsc.com <i>사이트 보기 ↗</i></span></span>
+      </a>
+      <a class="ref rv" href="https://xn--299a59ia800mp4ex0csc.kr/" target="_blank" rel="noopener">
+        <span class="thumb"><img src="/img/web/ref/daeruck.jpg" alt="주식회사 대륙 홈페이지 첫 화면" loading="lazy"></span>
+        <span class="body"><small>기업 · 임대</small><b>주식회사 대륙</b><span class="desc">고소작업대 임대 상품과 고객 서비스를 담은 기업 홈페이지</span><span class="dom">고소작업대임대.kr <i>사이트 보기 ↗</i></span></span>
+      </a>
+      <a class="ref rv" href="https://www.lenua.kr/" target="_blank" rel="noopener">
+        <span class="thumb"><img src="/img/web/ref/lenua.jpg" alt="르누아의원 강남점 홈페이지 첫 화면" loading="lazy"><span class="wip">제작 중</span></span>
+        <span class="body"><small>병의원 · 피부과</small><b>르누아의원 강남점</b><span class="desc">다국어(한·영·일·중) 상담 예약을 지원하는 피부과 홈페이지</span><span class="dom">lenua.kr <i>사이트 보기 ↗</i></span></span>
+      </a>
+      <a class="ref rv" href="/" target="_blank" rel="noopener">
+        <span class="thumb"><img src="/img/web/ref/../case-home.jpg" alt="요니홀딩스 회사 홈페이지 홈페이지 첫 화면" loading="lazy"></span>
+        <span class="body"><small>자사 · 기업 홈페이지</small><b>요니홀딩스 회사 홈페이지</b><span class="desc">사업부 소개, 포트폴리오, 문의 양식과 상담 챗봇까지</span><span class="dom">yonyholdings.co.kr <i>사이트 보기 ↗</i></span></span>
+      </a>
+      <a class="ref rv" href="/start/" target="_blank" rel="noopener">
+        <span class="thumb"><img src="/img/web/ref/../case-start.jpg" alt="무료 진단 신청 랜딩페이지 홈페이지 첫 화면" loading="lazy"></span>
+        <span class="body"><small>자사 · 랜딩페이지</small><b>무료 진단 신청 랜딩페이지</b><span class="desc">업종별로 문구가 바뀌는 상담 유도용 광고 페이지</span><span class="dom">yonyholdings.co.kr/start <i>사이트 보기 ↗</i></span></span>
       </a>
     </div>
   </div>
